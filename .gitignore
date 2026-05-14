@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+.env
+.env.*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
+
+# Generated artifacts
+reports/figures/*.png
+reports/figures/*.jpg
+reports/figures/*.svg
+models/*.pkl
+models/*.joblib
+
+# Keep raw coursework dataset intentionally tracked for reproducibility
+!data/raw/Car_sales.xlsx

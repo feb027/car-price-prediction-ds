@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kokpit Prediksi — Estimasi Harga Mobil</title>
+  <link rel="stylesheet" href="/static/styles.css?v=cockpit-final-2">
+</head>
+<body>
+  <header class="cockpit-top" aria-label="Header proyek">
+    <a class="sig" href="/">MODEL / HARGA / MOBIL</a>
+    <div class="student"><strong>Sains Data</strong><span>Final Project</span></div>
+  </header>
+
+  <main class="cockpit-layout">
+    <section class="instrument-hero" aria-labelledby="page-title">
+      <div class="hero-meta"><p class="eyebrow">Kokpit regresi · 8 numerik</p><h1 id="page-title">Estimasi harga mobil dari spesifikasi yang kamu isi.</h1><p class="hero-lead">Ubah spesifikasi kendaraan di bawah, lalu lihat estimasi utama di instrumen kanan. Nilai ditampilkan dalam ribu USD sesuai dataset.</p></div>
+      <section class="gauge-result" aria-label="Gauge hasil prediksi">
+        <div class="gauge-ring" aria-hidden="true"></div>
+        <div id="result-state" class="empty-state"><strong>—</strong><span>Belum ada prediksi. Isi spesifikasi kendaraan, lalu tekan Hitung Estimasi.</span></div>
+        <div id="result-panel" class="prediction-result" hidden style="display: none;" aria-hidden="true">
+          <p class="muted-label">Perkiraan harga</p>
+          <div class="price-row"><span id="prediction-thousand" class="price-main">—</span><span class="price-unit">ribu USD</span></div>
+          <p id="prediction-usd" class="price-usd">—</p>
+          <p id="prediction-range" class="prediction-range">—</p>
+        </div>
+      </section>
+    </section>
+
+    <form class="instrument-strip" id="prediction-form" aria-label="Input prediksi">
+      <div class="strip-heading"><p class="eyebrow">Input spesifikasi</p><h2>Spesifikasi kendaraan</h2><p class="strip-copy">Gunakan angka desimal dengan koma atau titik. Setiap field punya rentang valid dari dataset.</p></div>
+      <div id="feature-groups" class="feature-groups"></div>
+      <div class="strip-action"><button class="primary-button" id="predict-button" type="submit">Hitung Estimasi</button><p class="submit-status" id="submit-status" role="status" aria-live="polite"></p></div>
+      <p class="form-note">Tips: mulai dari nilai bawaan, lalu ubah 1–2 parameter untuk melihat pengaruhnya.</p>
+    </form>
+
+    <section class="cockpit-lower" aria-label="Audit dan referensi">
+      <article class="blackbox-input">
+        <div class="model-input"><div class="model-input-heading"><span>Input yang dikirim ke model</span><span>JSON</span></div><pre id="input-json">Belum ada input. Jalankan prediksi untuk melihat data input.</pre></div>
+      </article>
+      <article class="model-stack">
+        <p class="eyebrow">Ringkasan model</p>
+        <div class="metric-list" id="metrics"></div>
+        <ol class="method-list"><li>Data latih dan data uji memakai pembagian 80:20.</li><li>Target model: harga dalam ribu USD (Price_in_thousands).</li><li>Skema final memakai 8 fitur numerik tanpa fitur proxy performa.</li></ol>
+      </article>
+      <article class="sales-radar">
+        <div class="radar-head"><p class="eyebrow">Referensi penjualan</p><h2>10 mobil teratas</h2><p class="panel-note">Pembanding cepat dari dataset untuk membaca konteks prediksi.</p></div>
+        <div id="sales-chart" class="sales-chart"></div>
+        <div class="identity-card" aria-label="Identitas mahasiswa">
+          <p class="eyebrow">Identitas</p>
+          <strong id="student-name">Febnawan Fatur Rochman</strong>
+          <span id="student-meta">NPM 237006029 · Informatika A - FT UNSIL</span>
+          <span class="identity-course">Final Project Sains Data</span>
+        </div>
+      </article>
+      <article class="sales-log table-wrap">
+        <table><thead><tr><th>#</th><th>Mobil</th><th>Penjualan</th><th>Harga</th></tr></thead><tbody id="top-sales-body"></tbody></table>
+      </article>
+    </section>
+  </main>
+  <script src="/static/app.js?v=showroom-ux-6" defer></script>
+</body>
+</html>
