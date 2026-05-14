@@ -30,7 +30,7 @@ Output utama project:
 
 > Screenshot bisa diganti manual di folder `assets/screenshots/`.
 
-![Placeholder tampilan web app prediksi harga mobil](assets/screenshots/web-app-placeholder.svg)
+![tampilan web app prediksi harga mobil](assets/screenshots/web-app-placeholder.png)
 
 ## Alur project
 
