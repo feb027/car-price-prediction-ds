@@ -28,8 +28,6 @@ Output utama project:
 
 ## Preview web app
 
-> Screenshot bisa diganti manual di folder `assets/screenshots/`.
-
 ![tampilan web app prediksi harga mobil](assets/screenshots/web-app-placeholder.png)
 
 ## Alur project
